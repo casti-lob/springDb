@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form class="form-horizontal" action="#" th:action="@{editStudent/submit}" th:object="${student}" method="post">
+		<fieldset>
+
+			<legend>Estudiante seleccionado</legend>
+
+			<!-- * pilla los campos del objeto definido en form -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="name">Nombre:</label>
+				<div class="col-md-4">
+					<input id="name" name="name" type="text" class="form-control input-md" 
+					th:field= "*{name}" th:value="${student.name}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="lastName">Apellido: </label>
+				<div class="col-md-4">
+					<input id="surname" name="surname" type="text" class="form-control input-md" 
+					th:field= "*{surname}" th:value="${student.surname}" >
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="age">Edad: </label>
+				<div class="col-md-4">
+					<input id="age" name="age" type="number" class="form-control input-md" 
+					th:field= "*{age}" th:value="${student.age}">
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="send"></label>
+				<div class="col-md-4">
+					<button id="send" name="send" class="btn btn-primary">Modificar</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+</body>
+</html>

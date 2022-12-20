@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<div >
+			<h1>Listado de Estudiantes</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>NOMBRE</th>
+						<th>APELLIDO</th>
+						<th>EDAD</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- student o como lo queramos llamar/list: nombre del atributo model que hayamos puesto -->
+					<tr th:each="student :${list}">
+						<td th:text="${student.name}"></td>
+						<td th:text="${student.surname}"></td>
+						<td th:text="${student.age}"></td>
+						<td>
+							<a th:href="@{'delStudent'(id=${student.id})}" >
+								<button id="send" name="send" class="btn btn-primary">Borrar</button>
+							</a>
+							
+							<a th:href="@{'editStudent'(id=${student.id})}" >
+								<button id="send" name="send" class="btn btn-primary">Editar</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</body>
+</html>
